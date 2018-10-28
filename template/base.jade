@@ -1,0 +1,38 @@
+html
+	head
+		+h.headers
+		block title
+                title= site.title + ' - ' + site.configs.sub_title
+		+load('font')
+		+h.load('markdown')
+		+h.load('animation')
+		+load('/template/style.scss')
+		+load('/template/colorbox.scss')
+		+load('/template/js/jquery.colorbox.js')
+		+load('/template/js/full.js')
+	body
+		.nav(class='topNav')
+			.avatar
+				a(href="/")
+					img(src=site.avatar, class='avatar' , width=26 )
+	        +site.just_nav
+		block bloginfo
+			.blog-info
+				h3= site.configs.admin_name
+				p(style="font-size:14px;") Taking photos is one of the most wonderfull things in the world.
+		
+
+				
+
+
+		block content
+
+		+h.back_to_top(label='↑')
+
+		.footer
+			div(style="display: none;")
+				+site.nav
+
+			.powered_by
+				a(href="https://nooooe.cn") Every photos shot by Bearye,
+				a(href="https://www.bitcron.com", target="_blank") Proudly published with Bitcron！
